@@ -1,15 +1,16 @@
 import {Button, Modal} from "react-bootstrap";
 import CloseBtn from "../Util/CloseButton";
-import {HandPhoneTab} from "./HandphoneTab";
-import {EmailTab} from "./EmailTab";
 import {useState} from "react";
+import {EmailTabLogin} from "./EmailTabLogin";
+import {HandPhoneTabLogin} from "./HandphoneTabLogin";
 
-function chooseTabRegister(tabName) {
-    if(tabName === "handPhoneTab") {
+
+function chooseTabLogin(tabName) {
+    if(tabName === "handPhoneTabLogin") {
         return(
             <>
                 <div className={"col-12"}>
-                    <HandPhoneTab/>
+                    <HandPhoneTabLogin/>
                 </div>
             </>
         )
@@ -17,13 +18,13 @@ function chooseTabRegister(tabName) {
     return(
         <>
             <div className={"col-12"}>
-                <EmailTab/>
+                <EmailTabLogin/>
             </div>
         </>)
 }
 
-export function RegisterModal(prop) {
-    const [stateTabName, setStateTabName] = useState("handPhoneTab")
+export function LoginModal(prop) {
+    const [stateTabName, setStateTabName] = useState("handPhoneTabLogin")
     return (
         <>
             <Modal show={prop.prop.show}>
@@ -50,18 +51,16 @@ export function RegisterModal(prop) {
                 </Modal.Header>
                 <Modal.Body>
                     <div className={"row"}>
-                        <div className={"col-2"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("handPhoneTab"))}}>Nomor HP
-                            <div className={stateTabName==="handPhoneTab" ? "underline-mobile-tab" : ""}></div>
+                        <div className={"col-2"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("handPhoneTabLogin"))}}>Nomor HP
+                            <div className={stateTabName==="handPhoneTabLogin" ? "underline-mobile-tab" : ""}></div>
                         </div>
-                        <div className={"col-10"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("emailTab"))}}>Email
-                            <div className={stateTabName === "emailTab" ? "underline-email-tab" : ""}></div>
+                        <div className={"col-10"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("emailTabLogin"))}}>Email
+                            <div className={stateTabName === "emailTabLogin" ? "underline-email-tab" : ""}></div>
                         </div>
-                        {chooseTabRegister(stateTabName)}
+                        {chooseTabLogin(stateTabName)}
                     </div>
                 </Modal.Body>
                 <div className={"pl-3 pr-3"}>
-                    <p style={{fontSize: ".7rem", fontWeight: "400"}}>Dengan mendaftar, kamu menyetujui <a href={"#"} style={{color:"black",fontSize: ".7rem", fontWeight: "500",textDecoration:"underline"}}>Syarat dan
-                        Kondisi</a>,serta <a href={"#"} style={{color:"black",fontSize: ".7rem", fontWeight: "500",textDecoration:"underline"}}>Kebijakan Privasi eBola</a></p>
                     <div className={"mb-3"}>
                         <Button style={{
                             fontSize: ".9rem",
@@ -84,8 +83,8 @@ export function RegisterModal(prop) {
                             color: "white",
                             fontSize: ".8rem",
                             paddingLeft: "1rem",
-                        }}>Sudah punya akun?</span>
-                        <a href={"/#"} style={{color: "white", fontSize: ".8rem"}}> Login ke akunmu!</a>
+                        }}>Belum punya akun?</span>
+                        <a href={"/#"} style={{color: "white", fontSize: ".8rem"}}> Daftar Sekarang!</a>
                     </div>
                 </div>
             </Modal>

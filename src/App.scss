@@ -1,4 +1,5 @@
 $main-color : linear-gradient(to bottom, #013A67,#359DD9);
+$yellow-slider : #E1AA12;
 
 * {
   font-size: 1rem;
@@ -41,15 +42,20 @@ $main-color : linear-gradient(to bottom, #013A67,#359DD9);
     }
 }
 
-.underline-news {
-  width: 50px;
+.underline-mobile-tab {
+  width: 75px;
+  height: 2px;
+  background-color: #E1AA12
+}
+.underline-email-tab {
+  width: 40px;
   height: 2px;
   background-color: #E1AA12
 }
 
 .big-news {
   background-color: grey;
-  height: 200px;
+  height: 260px;
   width:  100%;
 }
 
@@ -89,15 +95,16 @@ $main-color : linear-gradient(to bottom, #013A67,#359DD9);
 
 
 .search-match {
+  background-color: white;
   input {
     cursor: pointer;
     padding-right: 40px;
-    background-image: url('assets/search.png');
+    //background-image: url('assets/search.png');
     background-repeat: no-repeat;
     background-position-x: 100%;
     background-position-y: 70%;
     background-color: transparent;
-    color: white !important;
+    color: black !important;
     outline: none;
     border: none;
   }
@@ -110,5 +117,68 @@ $main-color : linear-gradient(to bottom, #013A67,#359DD9);
   }
 }
 
+#go-team-popular {
+  #go-team-popular-image {
+    div {
+      padding-bottom: 1.3rem;
+    }
+
+  }
+  #go-team-popular-desc {
+    div {
+      padding-bottom: 2.1rem;
+      div {
+        margin-top: -.1rem;
+        float: right;
+      }
+    }
+  }
+}
+
+#go-news-thumbnail {
+  div{
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+}
 
 
+@media (min-width: 1200px)  {
+  .modal-content {
+    width: 130% !important;
+    right: 20% !important;
+  }
+}
+
+.react-search-box-dropdown-list-item {
+  color: black;
+}
+
+.bncmtB  {
+  ul {
+    margin-top: -1rem !Important;
+    li {
+      border: none !important;
+    }
+  }
+}
+
+.yellow-slider {
+  width: 50px;
+  height: 5px;
+  background-color: $yellow-slider;
+}
+
+.dAZYal {
+  border : none !important;
+}
+
+.jifbFL {
+  position: absolute !important;
+  width: 80% !important;
+}
+
+
+.sc-eDvSVe jifbFL {
+  background-color: white !important;
+}

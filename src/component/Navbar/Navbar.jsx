@@ -1,9 +1,8 @@
-import search from "../../assets/search.png"
 import line1 from "../../assets/line_1.png"
-import {useState} from "react";
 import {RegisterModal} from "../Register/RegisterModal";
-import {LoginModal} from "../Login/Login";
-
+import {LoginModal} from "../Login/LoginModal";
+import {useState} from "react";
+import ReactSearchBox from "react-search-box";
 
 function authModal(authComponent,prop) {
     if(authComponent==="login") {
@@ -15,8 +14,11 @@ function authModal(authComponent,prop) {
         return <RegisterModal prop={prop}/>
     }
 }
+
 export function Navbar() {
     const[authComponent,setAuthComponent]=useState("login");
+    const [pageSizeState]=useState(1)
+    const [searchBoxState,setSearchBoxState]=useState(false)
     let prop;
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
@@ -34,7 +36,15 @@ export function Navbar() {
         setShow: setShowLogin,
         handleClose: handleCloseLogin
     }
+
     prop = (authComponent === "login") ? propLogin : propRegister
+
+    // useEffect(() => {
+    //     document.body.addEventListener('click', () => {
+    //         setSearchBoxState(false)
+    //     });
+    // }, []);
+
     return (
         <div className={"header"}>
             {authModal(authComponent,prop)}
@@ -44,25 +54,45 @@ export function Navbar() {
                 }}>
                 <div className={"float-left"} style={
                     {
-                        width: "60%",
+                        width: "70%",
                     }}>
                     <div style={{
                         paddingTop: ".5rem",
                         position: "relative"
                     }} className={"row"}>
-                        <div className={"col-8"}>Logo</div>
-                        <div className={"col-4 search-match"}>
-                            <input type={"text"} placeholder={"Pertandingan Sepak Bola"}/>
-                            {/*<img src={search} width="15" height="15" alt={'search'} style={{*/}
-                            {/*    cursor: "pointer",*/}
-                            {/*    position: "relative",*/}
-                            {/*    top: "-0.1rem",*/}
-                            {/*    left: "0rem"*/}
-                            {/*}}/>*/}
+                        <div className={"col-8"} style={{fontSize:"2rem"}}>Logo</div>
+                        <div className={"col-4"} style={{}}>
+                            {/*<input type={"text"} placeholder={"Pertandingan Sepak Bola"}*/}
+                            {/*       onFocus={()=>{setSearchBoxState(true)}}/>*/}
+                            <ReactSearchBox
+                                placeholder="Pertandingan Sepak Bola"
+                                data={[
+                                    {
+                                        key: "man",
+                                        value: "Manchester United"
+                                    },
+                                    {
+                                        key: "chel",
+                                        value: "Chelsea F.C"
+                                    },
+                                    {
+                                        key: "man",
+                                        value: "Manchester City"
+                                    }
+                                ]}
+                                onSelect={(record) => console.log(record)}
+                                onFocus={() => {
+                                    console.log("This function is called when is focussed");
+                                }}
+                                onChange={(value) => console.log(value)}
+                                autoFocus
+                                iconBoxSize="48px"
+                            />
                         </div>
+                        {/*<SearchBox pageSize={pageSizeState} searchBoxToggle={searchBoxState}/>*/}
                     </div>
                 </div>
-                    <img src={line1} width="" height="45" alt={'line'} style={{
+                    <img src={line1 ? line1 : ""} width="" height="45" alt={'line'} style={{
                         position: "relative",
                         top: "0rem",
                         left: "2rem"
@@ -77,7 +107,8 @@ export function Navbar() {
                              cursor: "pointer"
                          }}
                          onClick={() => {
-                             handleShowLogin(setAuthComponent("login"))
+                             handleShowLogin()
+                             setAuthComponent("login")
                          }}>Masuk
                     </div>
                     <div className={"d-inline-block pl-5"} id={"register"}>
@@ -86,12 +117,12 @@ export function Navbar() {
                                  cursor: "pointer"
                              }}
                              onClick={() => {
-                                 handleShow(setAuthComponent("register"))
+                                 handleShow()
+                                 setAuthComponent("register")
                              }}>Buat Akun
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     )

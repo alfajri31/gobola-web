@@ -1,7 +1,6 @@
-import {Navbar} from "./Navbar/Navbar";
 import {Footer} from "./Footer/Footer";
 import Content from "./Content/Content";
-import {CloseButton} from "react-bootstrap";
+import {Navbar} from "./Navbar/Navbar";
 
 export function Landing() {
     return(
