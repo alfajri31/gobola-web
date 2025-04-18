@@ -8,14 +8,59 @@ import image6 from "../../../assets/arsenal.png"
 import image7 from "../../../assets/chelsea.png"
 import favoriteStar from "../../../assets/favorite_star.png"
 import {Accordion, Card, useAccordionButton} from "react-bootstrap";
-
+import React, { useState, useEffect } from 'react';
+import { fetchDataHeadlineNews, fetchDataThumbnailNews } from '../../../service/LandingPageService';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'; // for default styling
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from "react-slick";
 
 function News() {
+
+    const images = [
+        "http://localhost:3000/static/media/image1.99a56096abdccb1281a3.png",
+        "http://localhost:3000/static/media/image1.99a56096abdccb1281a3.png"
+      ];
+
+      
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    autoplay: true
+  };
+
+
+    const [headlineNews, setHeadlineNews] = useState([]);
+    const [thumbailNews, setThumbnailNews] = useState([]);
+    const [loadingHeadlineNews, setLoadingHeadlineNews] = useState(true); 
+
+    useEffect(() => {
+            fetchDataHeadlineNews(1, 10).then((result) => {
+                setHeadlineNews(result.data);
+            }).catch(error => {
+            console.error('Failed to fetch headline news:', error);
+            }).finally(() => setLoadingHeadlineNews(false));
+        }, []);
+    
+    // useEffect(() => {
+    //     fetchDataThumbnailNews(1, 10).then((result) => {
+    //         setThumbnailNews(result.data);
+    //     }).catch(error => {
+    //         console.error('Failed to fetch thumbnail news:', error);
+    //     });
+    // },[])
+
     return(
         <>
             <div className={"row"}>
                 <div className={"col-md-8"}>
-                    <div className={"big-news"}></div>
+                    {
+                        (loadingHeadlineNews) ? <Skeleton height={300} width={800} /> : (<div className={"big-news"}></div>)
+                    }
                     <ul className={"news-list"} style={{cursor:"pointer"}}>
                         <li>
                             <div>Utama</div>
@@ -26,23 +71,22 @@ function News() {
                         <li>Transfer</li>
                         <li>Terkini</li>
                     </ul>
-                    <div className={"d-flex"} id={"upper-thumbnail-news"}>
-                        <div className={"d-inline-block mr-2"}
-                             style={{width: "100%", height: "300px", backgroundColor: "grey", borderRadius: ".4rem"}}>
-                            <Image src={image1 ? image1 : ""} width={"100%"} height={"100%"}
-                                   style={{borderRadius: ".4rem"}}/>
-                            <div style={{color: 'grey', position: "relative", bottom: "40%", left: "2%",fontSize:".9rem"}}>7h</div>
-                            <div style={{color: 'white', position: "relative", bottom: "39%", left: "2%"}}>
-                                <p style={{width:"95%"}}>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore
-                                </p>
-                            </div>
-                        </div>
-                        <div className={"d-inline-block"}
-                             style={{width: "50%", height: "200px", backgroundColor: "grey",borderRadius:".4rem"}}>
-                            <Image src={image1 ? image1 : ""} width={"100%"} height={"300px"} style={{objectFit:"cover",borderRadius:".4rem"}}/>
-                        </div>
+                    <div>
+                        {headlineNews.length > 0 ? 
+                            <Slider {...settings} >
+                                 {
+                                images.map((img, index) => (
+                                    <div key={index}>
+                                        <div style={{backgroundColor: 'red',marginRight: '20px'}} className='headline-news-image'>
+                                            <Image className="testimage" src={img ? headlineNews[index].image : ""} alt={`Slide ${index}`} width={'100%'} height={"100%"} style={{borderRadius: ".4rem"}}/>
+                                        </div>
+                                    
+                                    </div>
+                                ))
+                            }
+                            </Slider> 
+                            : <Skeleton height={300} width={800}/>
+                            }
                     </div>
                     <div className={'row'} id={"go-news-thumbnail"}>
                         <div className={"col-2"}>

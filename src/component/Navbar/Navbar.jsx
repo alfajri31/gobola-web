@@ -16,10 +16,10 @@ function authModal(authComponent,prop) {
 }
 
 export function Navbar() {
+    let prop;
     const[authComponent,setAuthComponent]=useState("login");
     const [pageSizeState]=useState(1)
     const [searchBoxState,setSearchBoxState]=useState(false)
-    let prop;
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
@@ -39,11 +39,6 @@ export function Navbar() {
 
     prop = (authComponent === "login") ? propLogin : propRegister
 
-    // useEffect(() => {
-    //     document.body.addEventListener('click', () => {
-    //         setSearchBoxState(false)
-    //     });
-    // }, []);
 
     return (
         <div className={"header"}>
@@ -62,24 +57,47 @@ export function Navbar() {
                     }} className={"row"}>
                         <div className={"col-8"} style={{fontSize:"2rem"}}>Logo</div>
                         <div className={"col-4"} style={{}}>
-                            {/*<input type={"text"} placeholder={"Pertandingan Sepak Bola"}*/}
-                            {/*       onFocus={()=>{setSearchBoxState(true)}}/>*/}
                             <ReactSearchBox
                                 placeholder="Pertandingan Sepak Bola"
                                 data={[
-                                    {
-                                        key: "man",
-                                        value: "Manchester United"
-                                    },
-                                    {
-                                        key: "chel",
-                                        value: "Chelsea F.C"
-                                    },
-                                    {
-                                        key: "man",
-                                        value: "Manchester City"
-                                    }
-                                ]}
+                                    { key: "a", value: "Arsenal" },
+                                    { key: "atm", value: "Atletico Madrid" },
+                                    { key: "b", value: "Barcelona" },
+                                    { key: "bm", value: "Bayern Munich" },
+                                    { key: "c", value: "Chelsea F.C" },
+                                    { key: "cp", value: "Crystal Palace" },
+                                    { key: "d", value: "Dortmund" },
+                                    { key: "e", value: "Everton" },
+                                    { key: "f", value: "Fulham" },
+                                    { key: "g", value: "Galatasaray" },
+                                    { key: "h", value: "Hertha Berlin" },
+                                    { key: "i", value: "Inter Milan" },
+                                    { key: "j", value: "Juventus" },
+                                    { key: "k", value: "Kaiserslautern" },
+                                    { key: "l", value: "Liverpool" },
+                                    { key: "lc", value: "Leicester City" },
+                                    { key: "m", value: "Manchester United" },
+                                    { key: "man", value: "Manchester City" },
+                                    { key: "n", value: "Napoli" },
+                                    { key: "new", value: "Newcastle United" },
+                                    { key: "o", value: "Olympiacos" },
+                                    { key: "psg", value: "Paris Saint-Germain" },
+                                    { key: "p", value: "Porto" },
+                                    { key: "qpr", value: "Queens Park Rangers" },
+                                    { key: "r", value: "Real Madrid" },
+                                    { key: "rs", value: "Real Sociedad" },
+                                    { key: "s", value: "Sevilla" },
+                                    { key: "sh", value: "Southampton" },
+                                    { key: "t", value: "Tottenham Hotspur" },
+                                    { key: "u", value: "Udinese" },
+                                    { key: "v", value: "Valencia" },
+                                    { key: "villa", value: "Aston Villa" },
+                                    { key: "w", value: "West Ham United" },
+                                    { key: "wlv", value: "Wolverhampton" },
+                                    { key: "x", value: "Xerez CD" },
+                                    { key: "yb", value: "Young Boys" },
+                                    { key: "z", value: "Zaragoza" }
+                                  ]}
                                 onSelect={(record) => console.log(record)}
                                 onFocus={() => {
                                     console.log("This function is called when is focussed");

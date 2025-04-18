@@ -1,6 +1,6 @@
 import News from "./News/News";
 
-function Content() {
+function LandingContent() {
     return(
         <>
             <div>
@@ -12,4 +12,4 @@ function Content() {
     )
 }
 
-export default Content
+export default LandingContent
