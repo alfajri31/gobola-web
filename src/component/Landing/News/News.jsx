@@ -1,5 +1,5 @@
 import Image from 'react-bootstrap/Image';
-import image1 from "../../../assets/image1.png"
+import imageThumb from "../../../assets/image2.png"
 import image2 from "../../../assets/manchester.png"
 import image3 from "../../../assets/uefa_champions_league.png"
 import image4 from "../../../assets/manchester_city.png"
@@ -18,19 +18,22 @@ import Slider from "react-slick";
 
 function News() {
 
-    const images = [
-        "http://localhost:3000/static/media/image1.99a56096abdccb1281a3.png",
-        "http://localhost:3000/static/media/image1.99a56096abdccb1281a3.png"
-      ];
-
-      
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 2,
-    autoplay: true
+    autoplay: true,
+    responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
   };
 
 
@@ -46,20 +49,20 @@ function News() {
             }).finally(() => setLoadingHeadlineNews(false));
         }, []);
     
-    // useEffect(() => {
-    //     fetchDataThumbnailNews(1, 10).then((result) => {
-    //         setThumbnailNews(result.data);
-    //     }).catch(error => {
-    //         console.error('Failed to fetch thumbnail news:', error);
-    //     });
-    // },[])
+    useEffect(() => {
+        fetchDataThumbnailNews(1, 10).then((result) => {
+            setThumbnailNews(result.data);
+        }).catch(error => {
+            console.error('Failed to fetch thumbnail news:', error);
+        });
+    },[])
 
     return(
         <>
             <div className={"row"}>
                 <div className={"col-md-8"}>
                     {
-                        (loadingHeadlineNews) ? <Skeleton height={300} width={800} /> : (<div className={"big-news"}></div>)
+                        (loadingHeadlineNews) ? <Skeleton height={300} width={800} /> : (<div className={"big-news-wrapper"}><div className={"big-news"}></div></div>)
                     }
                     <ul className={"news-list"} style={{cursor:"pointer"}}>
                         <li>
@@ -75,10 +78,10 @@ function News() {
                         {headlineNews.length > 0 ? 
                             <Slider {...settings} >
                                  {
-                                images.map((img, index) => (
+                                headlineNews.map((data, index) => (
                                     <div key={index}>
                                         <div style={{backgroundColor: 'red',marginRight: '20px'}} className='headline-news-image'>
-                                            <Image className="testimage" src={img ? headlineNews[index].image : ""} alt={`Slide ${index}`} width={'100%'} height={"100%"} style={{borderRadius: ".4rem"}}/>
+                                            <Image className="testimage" src={data ? headlineNews[index].image : ""} alt={`Slide ${index}`} width={'100%'} height={"100%"} style={{borderRadius: ".4rem"}}/>
                                         </div>
                                     
                                     </div>
@@ -89,13 +92,11 @@ function News() {
                             }
                     </div>
                     <div className={'row'} id={"go-news-thumbnail"}>
-                        <div className={"col-2"}>
-                            <div className={"d-block"} style={{width: "150px", height: "100px", borderRadius: ".4rem"}}>
-                                <Image src={image1 ? image1 : ""} width={"100%"} height={"100%"}
-                                       style={{objectFit: "cover", borderRadius: ".4rem"}}/>
-                            </div>
+                        <div className={"col-md-3"}>
+                            <Image src={imageThumb ? imageThumb : ""} width={"100%"} height={"100%"}
+                                        style={{objectFit: "cover", borderRadius: ".4rem"}}/>
                         </div>
-                        <div className={"pl-5 col-10 row"}>
+                        <div className={"pl-5 col-md-9 row"}>
                             <div className={"col-11"}>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut
@@ -112,13 +113,11 @@ function News() {
                                 </svg>
                             </div>
                         </div>
-                        <div className={"col-2"}>
-                            <div className={"d-block"} style={{width: "150px", height: "100px", borderRadius: ".4rem"}}>
-                                <Image src={image1 ? image1 : ""} width={"100%"} height={"100%"}
+                        <div className={"col-md-3"}>
+                        <Image src={imageThumb ? imageThumb : ""} width={"100%"} height={"100%"}
                                        style={{objectFit: "cover", borderRadius: ".4rem"}}/>
-                            </div>
                         </div>
-                        <div className={"pl-5 col-10 row"}>
+                        <div className={"pl-5 col-md-9 row"}>
                             <div className={"col-11"}>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut
@@ -135,13 +134,11 @@ function News() {
                                 </svg>
                             </div>
                         </div>
-                        <div className={"col-2"}>
-                            <div className={"d-block"} style={{width: "150px", height: "100px", borderRadius: ".4rem"}}>
-                                <Image src={image1 ? image1 : ""} width={"100%"} height={"100%"}
+                        <div className={"col-md-3"}>
+                        <Image src={imageThumb ? imageThumb : ""} width={"100%"} height={"100%"}
                                        style={{objectFit: "cover", borderRadius: ".4rem"}}/>
-                            </div>
                         </div>
-                        <div className={"pl-5 col-10 row"}>
+                        <div className={"pl-5 col-md-9 row"}>
                             <div className={"col-11"}>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut
@@ -158,13 +155,11 @@ function News() {
                                 </svg>
                             </div>
                         </div>
-                        <div className={"col-2"}>
-                            <div className={"d-block"} style={{width: "150px", height: "100px", borderRadius: ".4rem"}}>
-                                <Image src={image1 ? image1 : ""} width={"100%"} height={"100%"}
+                        <div className={"col-md-3"}>
+                        <Image src={imageThumb ? imageThumb : ""} width={"100%"} height={"100%"}
                                        style={{objectFit: "cover", borderRadius: ".4rem"}}/>
-                            </div>
                         </div>
-                        <div className={"pl-5 col-10 row"}>
+                        <div className={"pl-5 col-md-9 row"}>
                             <div className={"col-11"}>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut
@@ -183,8 +178,8 @@ function News() {
                         </div>
                     </div>
                 </div>
-                <div className={"col-md-4"}>
-                    <div className={"col-10"} id={"go-accordion"}>
+                <div className={"col-md-4"} style={{backgroundColor: ''}}>
+                    <div className={"col-12"} id={"go-accordion"}>
                         <Accordion defaultActiveKey="0" style={{marginBottom: "2rem"}}>
                             <Card>
                                 <CustomToggle eventKey="0" color={"#E1AA12"}>Tim Favorit</CustomToggle>
