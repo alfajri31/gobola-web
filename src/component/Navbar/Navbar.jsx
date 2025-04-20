@@ -108,29 +108,29 @@ export function Navbar() {
                 <div className={"float-left"} style={{}}>
                     <img src={line1 ? line1 : ""} width="" height="45" alt={'line'} id="line" />
                 </div>
-                <div className={"cleared navbar-auth row"} style={{top:"1rem",backgroundColor: ""}}>
-                        <div className={"col-md-6 mt-2 d-flex justify-content-center"} id={"login"}
-                            style={{
-                                cursor: "pointer"
-                            }}
-                            onClick={() => {
-                                handleShowLogin()
-                                setAuthComponent("login")
-                            }}>Masuk
-                        </div>
-                        <div className={"col-md-6 d-flex justify-content-center"} id={"register"}>
-                            <div className={"create-account-btn"}
+                <div id="navbar-auth-wrapper">
+                    <div className={"cleared navbar-auth row"} style={{top:"1rem",backgroundColor: ""}}>
+                            <div className={"col-md-6 mt-2"} id={"login"}
                                 style={{
                                     cursor: "pointer"
                                 }}
                                 onClick={() => {
-                                    handleShow()
-                                    setAuthComponent("register")
-                                }}>Buat Akun
+                                    handleShowLogin()
+                                    setAuthComponent("login")
+                                }}>Login
                             </div>
-                        </div>
-                       
-                 
+                            <div className={"col-md-6"} id={"register"}>
+                                <div className={"create-account-btn"}
+                                    style={{
+                                        cursor: "pointer"
+                                    }}
+                                    onClick={() => {
+                                        handleShow()
+                                        setAuthComponent("register")
+                                    }}>Buat Akun
+                                </div>
+                            </div>  
+                    </div>
                 </div>
             </div>
         </div>

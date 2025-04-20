@@ -1,3 +1,5 @@
+
+
 $main-color : linear-gradient(to bottom, #013A67,#359DD9);
 $yellow-slider : #E1AA12;
 $max-mobile-width : 768px;
@@ -23,17 +25,7 @@ $max-mobile-width : 768px;
   font-weight: 100;
 }
 
-.create-account-btn {
-  background-color: white;
-  height: 2.5rem;
-  width: 100px;
-  border-radius: 4px;
-  color: black;
-  font-weight: 500;
-  font-size: 1rem;
-  padding-top: .5rem;
-  text-align: center;
-}
+
 
 .news-list {
   padding-left: 0;
@@ -142,6 +134,7 @@ $max-mobile-width : 768px;
   }
 }
 
+
 #go-news-thumbnail {
   div{
     font-weight: 500;
@@ -150,82 +143,7 @@ $max-mobile-width : 768px;
 }
 
 
-@media (min-width: 1200px)  {
-  .modal-content {
-    width: 130% !important;
-    right: 20% !important;
-  }
-}
 
-@media (max-width: $max-mobile-width ) {
-
-  
- .row {
-    margin-left:0 !important;
-    margin-right: 0 !important;
-  }
-
-.row {
-  padding-left:0 !important;
-  padding-right: 0 !important;
-}
-
-[class*="col"] {
-  padding-left: 0 !important; 
-  padding-right: 0 !important
-}
-
-
-  .lucide {
-    display: none !important;
-  }
-  #line {
-    display: none;
-  }
-
-  .cleared {
-    clear: both;
-  }
-
-  .navbar-auth {
-    padding-top: 3rem;
-    background-image: $main-color;
-    height: 100vh;
-    position: relative;
-    z-index: 1;
-    width: 100%;
-
-  }
-
-  .row {
-    margin-left: 0px !important;
-  }
-
-  .big-news {
-    position: absolute;
-    right: 0px;
-    z-index: -1 !important;
-  }
-
-  .big-news-wrapper {
-    height: 300px;
-  }
-
-  .searchbox {
-    position :relative !important;
-    background-color:  red;
-    z-index: 3;
-    top: 600px;
-    left: 90px !important;
-  }
-
-  .create-account-btn {
-    border-radius: 20px;
-  }
-  
-  
-
-}
 
 
 .react-search-box-dropdown-list-item {
@@ -245,5 +163,5 @@ $max-mobile-width : 768px;
   background-color: #E1AA12 !important;
 }
 
-
-
+@import '/src/media/mobile/mobile.scss';
+@import '/src/media/desktop/desktop.scss';

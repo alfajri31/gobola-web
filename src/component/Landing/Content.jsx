@@ -6,7 +6,7 @@ function LandingContent() {
             <div>
                 <h2>Berita Sepakbola terkini</h2>
                 <div style={{marginBottom:"1rem"}}></div>
-                <News id={"go-news"}/>
+                <News />
             </div>
         </>
     )

@@ -59,7 +59,7 @@ function News() {
 
     return(
         <>
-            <div className={"row"}>
+            <div className={"row"} id={"go-news"}>
                 <div className={"col-md-8"}>
                     {
                         (loadingHeadlineNews) ? <Skeleton height={300} width={800} /> : (<div className={"big-news-wrapper"}><div className={"big-news"}></div></div>)
@@ -88,7 +88,7 @@ function News() {
                                 ))
                             }
                             </Slider> 
-                            : <Skeleton height={300} width={800}/>
+                            : <Skeleton height={300} width={'100%'}/>
                             }
                     </div>
                     <div className={'row'} id={"go-news-thumbnail"}>
@@ -160,7 +160,6 @@ function News() {
                             <div className={"col-11"}>
                                 <span style={{display: 'block'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
                                 <span>7h</span>
-                                <div style={{marginBottom: '2rem'}}/>
                             </div>
                             <div className={"col-1"} style={{cursor: "pointer", position: "relative", left: "2.2rem"}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

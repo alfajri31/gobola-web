@@ -30,7 +30,7 @@ export function RegisterModal(prop) {
                 <Modal.Header>
                     <Modal.Title>
                         <div className={"row pr-5"}>
-                            <div className={"col-11"}>
+                            <div className={"col-10"}>
                                 <div>
                                     Daftar Sekarang
                                 </div>
@@ -42,7 +42,7 @@ export function RegisterModal(prop) {
                                     }>Simpan tim atau liga favorit kamu, ikuti obrolan, dan lainnya</p>
                                 </div>
                             </div>
-                            <div className={"col-1 position-relative"} style={{left: "50%"}}>
+                            <div className={"col-2 position-relative"} style={{}}>
                                 <CloseBtn close={prop.prop.handleClose}/>
                             </div>
                         </div>
@@ -50,10 +50,10 @@ export function RegisterModal(prop) {
                 </Modal.Header>
                 <Modal.Body>
                     <div className={"row"}>
-                        <div className={"col-2"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("handPhoneTab"))}}>Nomor HP
+                        <div className={"col-6"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("handPhoneTab"))}}>Nomor HP
                             <div className={stateTabName==="handPhoneTab" ? "underline-mobile-tab" : ""}></div>
                         </div>
-                        <div className={"col-10"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("emailTab"))}}>Email
+                        <div className={"col-6"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("emailTab"))}}>Email
                             <div className={stateTabName === "emailTab" ? "underline-email-tab" : ""}></div>
                         </div>
                         {chooseTabRegister(stateTabName)}
@@ -68,7 +68,7 @@ export function RegisterModal(prop) {
                             width: "100px",
                             backgroundColor: "#00B0A6"
                         }}>
-                            Login
+                            Daftar
                         </Button>
                     </div>
                 </div>

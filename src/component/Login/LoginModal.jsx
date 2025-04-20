@@ -31,9 +31,9 @@ export function LoginModal(prop) {
                 <Modal.Header>
                     <Modal.Title>
                         <div className={"row pr-5"}>
-                            <div className={"col-11"}>
+                            <div className={"col-10"}>
                                 <div>
-                                    Daftar Sekarang
+                                    Login ke akunmu
                                 </div>
                                 <div>
                                     <p style={{
@@ -43,7 +43,7 @@ export function LoginModal(prop) {
                                     }>Simpan tim atau liga favorit kamu, ikuti obrolan, dan lainnya</p>
                                 </div>
                             </div>
-                            <div className={"col-1 position-relative"} style={{left: "50%"}}>
+                            <div className={"col-2 position-relative"} style={{}}>
                                 <CloseBtn close={prop.prop.handleClose}/>
                             </div>
                         </div>
@@ -51,10 +51,10 @@ export function LoginModal(prop) {
                 </Modal.Header>
                 <Modal.Body>
                     <div className={"row"}>
-                        <div className={"col-2"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("handPhoneTabLogin"))}}>Nomor HP
+                        <div className={"col-6"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("handPhoneTabLogin"))}}>Nomor HP
                             <div className={stateTabName==="handPhoneTabLogin" ? "underline-mobile-tab" : ""}></div>
                         </div>
-                        <div className={"col-10"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("emailTabLogin"))}}>Email
+                        <div className={"col-6"} style={{cursor: "pointer", marginBottom: "2rem"}} onClick={()=>{setStateTabName(("emailTabLogin"))}}>Email
                             <div className={stateTabName === "emailTabLogin" ? "underline-email-tab" : ""}></div>
                         </div>
                         {chooseTabLogin(stateTabName)}

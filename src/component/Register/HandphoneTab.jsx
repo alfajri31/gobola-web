@@ -8,7 +8,7 @@ export function HandPhoneTab() {
     return (
         <>
             <div className={"row"}>
-                <div className={"col-6"}>
+                <div className={"col-md-6"}>
                     <InputGroup className="mb-3">
                         <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1"
@@ -22,8 +22,7 @@ export function HandPhoneTab() {
                         }}/>
                     </InputGroup>
                 </div>
-                <div className={"col-6"}></div>
-                <div className={"col-6"}>
+                <div className={"col-md-6"}>
                     <InputGroup className="mb-3">
                         <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1"
@@ -38,7 +37,7 @@ export function HandPhoneTab() {
                         }}/>
                     </InputGroup>
                 </div>
-                <div className={"col-6"}>
+                <div className={"col-md-6"}>
                     <InputGroup className="mb-3">
                         <div className="input-group-prepend">
                                     <span className="input-group-text" id="basic-addon1"
