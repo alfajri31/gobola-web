@@ -52,7 +52,7 @@ export function Navbar() {
                         paddingTop: "0rem",
                         position: ""
                     }} className={"row"}>
-                        <div className={"col-md-8"} style={{fontSize:"2rem",marginLeft: "1rem"}}>Logo</div>
+                        <div className={"col-md-8"} style={{fontSize:"2rem",Left: '1rem',marginLeft: '1rem',marginRight: '-1rem'}}>Logo</div>
                         <div className={"col-md-4 searchbox"} style={{}}>
                         <ReactSearchBox placeholder="Pertandingan Sepak Bola"
                                     data={[
