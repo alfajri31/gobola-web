@@ -50,9 +50,8 @@ $max-mobile-width : 768px;
 }
 
 .big-news {
-
   background-color: grey;
-  height: 260px;
+  height: 360px;
   width:  100%;
 }
 
@@ -143,9 +142,6 @@ $max-mobile-width : 768px;
 }
 
 
-
-
-
 .react-search-box-dropdown-list-item {
   color: black;
 }
@@ -159,9 +155,20 @@ $max-mobile-width : 768px;
   width: 80% !important;
 }
 
-.headline-news-image {
-  background-color: #E1AA12 !important;
+.slider::after {
+  position : absolute;
+  content: "";
+  display: block; 
+  width: 50px;
+  height: 4px;
+  background-color: $yellow-slider; 
+  margin-top: 10px; 
 }
+
+
+// .slick-slide {
+//   width: 600px !important;
+// }
 
 @import '/src/media/mobile/mobile.scss';
 @import '/src/media/desktop/desktop.scss';

@@ -9,7 +9,7 @@ import image7 from "../../../assets/chelsea.png"
 import favoriteStar from "../../../assets/favorite_star.png"
 import {Accordion, Card, useAccordionButton} from "react-bootstrap";
 import React, { useState, useEffect } from 'react';
-import { fetchDataHeadlineNews, fetchDataThumbnailNews } from '../../../service/LandingPageService';
+import { fetchDataHeadlineNews, fetchDataLandinglNews, fetchDataThumbnailNews } from '../../../service/LandingPageService';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'; // for default styling
 import 'slick-carousel/slick/slick.css';
@@ -36,10 +36,24 @@ function News() {
       ]
   };
 
-
+    let landingImage;
     const [headlineNews, setHeadlineNews] = useState([]);
     const [thumbailNews, setThumbnailNews] = useState([]);
+    const [landingNews, setLandingNews] = useState([]);
     const [loadingHeadlineNews, setLoadingHeadlineNews] = useState(true); 
+    const [loadingLandingNews, setLoadingLandingNews] = useState(true);
+
+    const [utama,setUtama] = useState(true);
+    const [terbaru,setTerbaru] = useState(false);
+    const [transfer,setTransfer] = useState(false);
+    const [galeri,setGaleri] = useState(false);
+
+    const handleClick = (type) => {
+        setUtama(type === 'utama');
+        setTerbaru(type === 'terbaru');
+        setTransfer(type === 'transfer');
+        setGaleri(type === 'galeri');
+      };
 
     useEffect(() => {
             fetchDataHeadlineNews(1, 10).then((result) => {
@@ -57,31 +71,58 @@ function News() {
         });
     },[])
 
+    useEffect(() => {
+        fetchDataLandinglNews(1, 10).then((result) => {
+            setLandingNews(result.data);
+        }).catch(error => {
+            console.error('Failed to fetch landing news:', error);
+        }).finally(() => setLoadingLandingNews(false));;
+    },[])
+
     return(
         <>
             <div className={"row"} id={"go-news"}>
                 <div className={"col-md-8"}>
                     {
-                        (loadingHeadlineNews) ? <Skeleton height={300} width={800} /> : (<div className={"big-news-wrapper"}><div className={"big-news"}></div></div>)
+                        (landingNews.length < 1) ? <Skeleton height={300} width={1000} /> : (
+                            <div className={'big-news'}>
+                                <Image fill src={landingNews[0].image} width={'100%'} height={'100%'} style={{objectFit: 'cover'}}/>
+                            </div>
+                        )
                     }
+                   
                     <ul className={"news-list"} style={{cursor:"pointer"}}>
                         <li>
-                            <div>Utama</div>
-                            <div className={"yellow-slider"}></div>
-                            <div className={"underline-news"}></div>
+                            <button style={{border:'none',backgroundColor: 'transparent'}}  onClick={() => handleClick('utama')}> Utama
+                                <div style={{marginBottom: '1rem'}}>{(utama) ? <span className={'slider'}></span> : ""}</div>
+                            </button>
                         </li>
-                        <li>Terbaru</li>
-                        <li>Transfer</li>
-                        <li>Terkini</li>
+                        <li>
+                            <button style={{border:'none',backgroundColor: 'transparent'}}  onClick={() => handleClick('terbaru')}> Terbaru
+                                {(terbaru) ? <span className={'slider'}></span> : ""}
+                            </button>
+                        </li>
+                        <li>
+                            <button style={{border:'none',backgroundColor: 'transparent'}}  onClick={() => handleClick('transfer')}> Transfer
+                            {(transfer) ? <span className={'slider'}></span> : ""}
+                            </button>
+                        </li>
+                        <li>
+                            <button style={{border:'none',backgroundColor: 'transparent'}}  onClick={() => handleClick('galeri')}> Terkini
+                            {(galeri) ? <span className={'slider'}></span> : ""}
+                            </button>
+                        </li>
                     </ul>
+                  
                     <div>
                         {headlineNews.length > 0 ? 
                             <Slider {...settings} >
                                  {
                                 headlineNews.map((data, index) => (
                                     <div key={index}>
-                                        <div style={{backgroundColor: 'red',marginRight: '20px'}} className='headline-news-image'>
-                                            <Image className="testimage" src={data ? headlineNews[index].image : ""} alt={`Slide ${index}`} width={'100%'} height={"100%"} style={{borderRadius: ".4rem"}}/>
+                                        <div style={{marginRight: '20px'}} className=''>
+                                            <Image className="testimage" src={data ? headlineNews[index].image : ""} alt={`Slide ${index}`} width={'100%'} height={"100%"} style={{borderRadius: ".4rem",objectFit: 'cover'}}/>
+                                            {/* <div style={{width: 100,height:100,backgroundColor: 'red',display: 'block'}}></div> */}
                                         </div>
                                     
                                     </div>
