@@ -96,12 +96,11 @@ function News() {
                             <Image src={imageThumb ? imageThumb : ""} width={"100%"} height={"100%"}
                                         style={{objectFit: "cover", borderRadius: ".4rem"}}/>
                         </div>
-                        <div className={"pl-5 col-md-9 row"}>
+                        <div className={"col-md-9 row"}>
                             <div className={"col-11"}>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut
-                                    labore</p>
-                                <p>7h</p>
+                                <span style={{display: 'block'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                                <span>7h</span>
+                                <div style={{marginBottom: '2rem'}}/>
                             </div>
                             <div className={"col-1"} style={{cursor: "pointer", position: "relative", left: "2.2rem"}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -117,12 +116,11 @@ function News() {
                         <Image src={imageThumb ? imageThumb : ""} width={"100%"} height={"100%"}
                                        style={{objectFit: "cover", borderRadius: ".4rem"}}/>
                         </div>
-                        <div className={"pl-5 col-md-9 row"}>
+                        <div className={"col-md-9 row"}>
                             <div className={"col-11"}>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut
-                                    labore</p>
-                                <p>7h</p>
+                                <span style={{display: 'block'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                                <span>7h</span>
+                                <div style={{marginBottom: '2rem'}}/>
                             </div>
                             <div className={"col-1"} style={{cursor: "pointer", position: "relative", left: "2.2rem"}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -138,12 +136,11 @@ function News() {
                         <Image src={imageThumb ? imageThumb : ""} width={"100%"} height={"100%"}
                                        style={{objectFit: "cover", borderRadius: ".4rem"}}/>
                         </div>
-                        <div className={"pl-5 col-md-9 row"}>
+                        <div className={"col-md-9 row"}>
                             <div className={"col-11"}>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut
-                                    labore</p>
-                                <p>7h</p>
+                                <span style={{display: 'block'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                                <span>7h</span>
+                                <div style={{marginBottom: '2rem'}}/>
                             </div>
                             <div className={"col-1"} style={{cursor: "pointer", position: "relative", left: "2.2rem"}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -159,12 +156,11 @@ function News() {
                         <Image src={imageThumb ? imageThumb : ""} width={"100%"} height={"100%"}
                                        style={{objectFit: "cover", borderRadius: ".4rem"}}/>
                         </div>
-                        <div className={"pl-5 col-md-9 row"}>
+                        <div className={"col-md-9 row"}>
                             <div className={"col-11"}>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut
-                                    labore</p>
-                                <p>7h</p>
+                                <span style={{display: 'block'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                                <span>7h</span>
+                                <div style={{marginBottom: '2rem'}}/>
                             </div>
                             <div className={"col-1"} style={{cursor: "pointer", position: "relative", left: "2.2rem"}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

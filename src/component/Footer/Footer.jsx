@@ -9,18 +9,18 @@ export function Footer() {
                     in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                     sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-                <p>
+                <div>
                     Access GoBola melalui Smartphone
-                </p>
+                </div>
                 <div className={"box1 d-inline-block mr-3"}>
 
                 </div>
                 <div className={"box1 d-inline-block"}>
 
                 </div>
-                <p>
+                <div>
                     Hak Cipta © 2021 GoBola
-                </p>
+                </div>
             </div>
         </>
     )
