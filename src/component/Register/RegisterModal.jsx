@@ -43,7 +43,7 @@ export function RegisterModal(prop) {
                                 </div>
                             </div>
                             <div className={"col-2 position-relative"} style={{}}>
-                                <CloseBtn close={prop.prop.handleClose}/>
+                                <CloseBtn close={prop.prop}/>
                             </div>
                         </div>
                     </Modal.Title>
@@ -68,7 +68,7 @@ export function RegisterModal(prop) {
                             width: "100px",
                             backgroundColor: "#00B0A6"
                         }}>
-                            Daftar
+                            Login
                         </Button>
                     </div>
                 </div>

@@ -61,7 +61,7 @@ function News() {
             }).catch(error => {
             console.error('Failed to fetch headline news:', error);
             }).finally(() => setLoadingHeadlineNews(false));
-        }, []);
+    }, []);
     
     useEffect(() => {
         fetchDataThumbnailNews(1, 10).then((result) => {
@@ -84,7 +84,7 @@ function News() {
             <div className={"row"} id={"go-news"}>
                 <div className={"col-md-8"}>
                     {
-                        (landingNews.length < 1) ? <Skeleton height={300} width={1000} /> : (
+                        (landingNews.length < 1) ? <Skeleton height={300} width={"100%"} /> : (
                             <div className={'big-news'}>
                                 <Image fill src={landingNews[0].image} width={'100%'} height={'100%'} style={{objectFit: 'cover'}}/>
                             </div>

@@ -1,4 +1,5 @@
 // apiService.js
+let API_HOST = process.env.REACT_APP_HOSTS;
 export const fetchDataHeadlineNews= async (start,size) => {
   try {
     const payload = {
@@ -7,7 +8,7 @@ export const fetchDataHeadlineNews= async (start,size) => {
       start: start,
       size: size,
     };
-    const response = await fetch('http://localhost:3001/headline/news', {
+    const response = await fetch(`${API_HOST}/headline/news`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -18,7 +19,6 @@ export const fetchDataHeadlineNews= async (start,size) => {
     if (!response.ok) {
       throw new Error(response);
     }
-
     const result = await response.json();
     return result;
   } catch (error) {
@@ -35,7 +35,7 @@ export const fetchDataThumbnailNews= async (start,size) => {
       start: start,
       size: size,
     };
-    const response = await fetch('http://localhost:3001/thumbnail/news', {
+    const response = await fetch(`${API_HOST}/thumbnail/news`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ export const fetchDataLandinglNews = async (start,size) => {
       start: start,
       size: size,
     };
-    const response = await fetch('http://localhost:3001/landing/news', {
+    const response = await fetch(`${API_HOST}/landing/news`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

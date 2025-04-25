@@ -135,11 +135,11 @@ export function Navbar() {
                                 </div>
                             </div>
                     </div>
-                    <div className={"float-left"} style={{}}>
+                    <div className={"pl-4 float-left"} style={{}}>
                             <img src={line1 ? line1 : ""} width="" height="45" alt={'line'} id="line" />
                     </div>
                     <div id="navbar-auth-wrapper">
-                            <div className={"cleared navbar-auth row"} style={{top:"1rem",backgroundColor: ""}}>
+                            <div className={"cleared navbar-auth row"} style={{top:"",backgroundColor: ""}}>
                                     <div className={"col-md-6 mt-2"} id={"login"}
                                         style={{
                                             cursor: "pointer"

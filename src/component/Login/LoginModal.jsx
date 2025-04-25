@@ -44,7 +44,7 @@ export function LoginModal(prop) {
                                 </div>
                             </div>
                             <div className={"col-2 position-relative"} style={{}}>
-                                <CloseBtn close={prop.prop.handleClose}/>
+                                <CloseBtn close={prop.prop}/>
                             </div>
                         </div>
                     </Modal.Title>

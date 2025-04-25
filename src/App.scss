@@ -1,11 +1,10 @@
-
-
 $main-color : linear-gradient(to bottom, #013A67,#359DD9);
 $yellow-slider : #E1AA12;
 $max-mobile-width : 768px;
 
 * {
   font-size: 1rem;
+  font-family: 'Lato', sans-serif;
 }
 
 .container-fluid {
@@ -146,24 +145,24 @@ $max-mobile-width : 768px;
   color: black;
 }
 
-.dAZYal {
-  border : none !important;
-}
+// .dAZYal {
+//   border : none !important;
+// }
 
-.jifbFL {
-  position: absolute !important;
-  width: 80% !important;
-}
+// .jifbFL {
+//   position: absolute !important;
+//   width: 80% !important;
+// }
 
-.slider::after {
-  position : absolute;
-  content: "";
-  display: block; 
-  width: 50px;
-  height: 4px;
-  background-color: $yellow-slider; 
-  margin-top: 10px; 
-}
+// .slider::after {
+//   position : absolute;
+//   content: "";
+//   display: block; 
+//   width: 50px;
+//   height: 4px;
+//   background-color: $yellow-slider; 
+//   margin-top: 10px; 
+// }
 
 
 // .slick-slide {

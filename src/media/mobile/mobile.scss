@@ -43,9 +43,9 @@
     }
   
     .searchbox {
-      position :relative !important;
+      position : absolute !important;
       z-index: 3;
-      top: 180px;
+      top: 195px;
       left: 0px !important;
     }
   
@@ -70,13 +70,13 @@
       }
     }
 
-    .sc-gswNZR {
-      width: 350px !important;
-    }
+    // .sc-gswNZR {
+    //   width: 350px !important;
+    // }
 
-    .sc-bcXHqe {
-      width: 350px !important;
-    }
+    // .sc-bcXHqe {
+    //   width: 350px !important;
+    // }
 
     .modal-body {
       [class*="col"] {
