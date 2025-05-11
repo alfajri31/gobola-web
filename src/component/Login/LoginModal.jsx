@@ -30,8 +30,8 @@ export function LoginModal(prop) {
             <Modal show={prop.prop.show}>
                 <Modal.Header>
                     <Modal.Title>
-                        <div className={"row pr-5"}>
-                            <div className={"col-10"}>
+                        <div className={"row"}>
+                            <div className={"col-12"}>
                                 <div>
                                     Login ke akunmu
                                 </div>
@@ -43,11 +43,11 @@ export function LoginModal(prop) {
                                     }>Simpan tim atau liga favorit kamu, ikuti obrolan, dan lainnya</p>
                                 </div>
                             </div>
-                            <div className={"col-2 position-relative"} style={{}}>
-                                <CloseBtn close={prop.prop}/>
-                            </div>
                         </div>
                     </Modal.Title>
+                    <div className={"pr-4"}>
+                        <CloseBtn close={prop.prop}/>
+                    </div>
                 </Modal.Header>
                 <Modal.Body>
                     <div className={"row"}>

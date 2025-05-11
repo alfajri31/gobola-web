@@ -9,7 +9,7 @@ import image7 from "../../../assets/chelsea.png"
 import favoriteStar from "../../../assets/favorite_star.png"
 import {Accordion, Card, useAccordionButton} from "react-bootstrap";
 import React, { useState, useEffect } from 'react';
-import { fetchDataHeadlineNews, fetchDataLandinglNews, fetchDataThumbnailNews } from '../../../service/LandingPageService';
+import { fetchDataHeadlineNews, fetchDataLandinglNews, fetchDataThumbnailNews,fetchTestApi, fetchTestApiPost, fetchTestApiPostWithPayload } from '../../../service/LandingPageService';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'; // for default styling
 import 'slick-carousel/slick/slick.css';
@@ -53,7 +53,31 @@ function News() {
         setTerbaru(type === 'terbaru');
         setTransfer(type === 'transfer');
         setGaleri(type === 'galeri');
-      };
+    };
+
+    useEffect(() => {
+        fetchTestApi().then((result) => {
+            console.log(result)
+        }).catch(error => {
+            console.error('Failed to fetch api test', error);
+        });
+    },[])
+
+    useEffect(() => {
+        fetchTestApiPost().then((result) => {
+            console.log(result)
+        }).catch(error => {
+            console.error('Failed to fetch api test', error);
+        });
+    },[])
+
+    useEffect(() => {
+        fetchTestApiPostWithPayload().then((result) => {
+            console.log(result)
+        }).catch(error => {
+            console.error('Failed to fetch api test', error);
+        });
+    },[])
 
     useEffect(() => {
             fetchDataHeadlineNews(1, 10).then((result) => {
@@ -91,6 +115,7 @@ function News() {
                         )
                     }
                    
+        
                     <ul className={"news-list"} style={{cursor:"pointer"}}>
                         <li>
                             <button style={{border:'none',backgroundColor: 'transparent'}}  onClick={() => handleClick('utama')}> Utama

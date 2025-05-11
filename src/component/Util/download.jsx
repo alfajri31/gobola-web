@@ -27,7 +27,7 @@ export function PopUpDownloaApk() {
         </Modal.Header>
         <Modal.Body>
                 <ul style={{fontWeight: 500}}>
-                    <li style={{paddingBottom: '1rem'}}>Download Android : <a href="https://al-fajricurriculumvitae.s3.ap-southeast-1.amazonaws.com/js/gobola-v1.apk">Gobola-android.apk</a></li>
+                    <li style={{paddingBottom: '1rem'}}>Download Android : <a href="https://al-fajricurriculumvitae.s3.ap-southeast-1.amazonaws.com/js/gobola-v2.apk">Gobola-android.apk</a></li>
                     <li style={{paddingBottom: '1rem'}}>Download IOS : <a>no available</a></li>
                 </ul>
         </Modal.Body>
